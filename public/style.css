@@ -5,7 +5,7 @@ body {
   font-size: 150px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   min-width: 500px;
   min-height: 350px;
@@ -20,9 +20,9 @@ body {
 }
 
 #result {
-  width: 300px;
+  width: 400px;
   margin: 20px;
-  font-size: 100px;
+  font-size: 40px;
 }
 
 .display-box {
@@ -61,6 +61,7 @@ i {
 .row {
   display: flex;
   justify-content: space-between;
+  margin: 20px;
 }
 
 .flip-left {
