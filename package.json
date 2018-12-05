@@ -1,6 +1,6 @@
 {
   "name": "rock-paper-scissors-lizard-spock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight, expanded Rock-Paper-Scissors Game from Big Bang Theory using Font Awesome",
   "main": "server.js",
   "scripts": {
