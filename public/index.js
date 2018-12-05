@@ -16,6 +16,7 @@ $('document').ready(function () {
 	}
 	
 	var leftHand, rightHand;
+	var playing = false;
 	
 	function win () {
 		const l = "Left Hand";
@@ -109,6 +110,7 @@ $('document').ready(function () {
 					 $("#icon-left").css("color", "lightgreen");
 					 $("#icon-right").css("color", "pink");
 				 }
+				 playing = false;
 			 }
 		 };
 		 $({deg: start}).animate({deg: middle},{
@@ -123,7 +125,10 @@ $('document').ready(function () {
 	 }
 	
 	$("body").click(function () {
+		if (!playing) {
+		playing = true;
 		rps("left", 0, -45)
 		rps("right", 0, 45)
+		}
 	});
 })
