@@ -53,7 +53,7 @@ $('document').ready(function () {
 					case ("paper"):
 						return "Lizard eats Paper!";
 					case ("scissors"):
-						return "Lizard is decapitated by Lizard!";
+						return "Lizard is decapitated by Scissors!";
 					case ("rock"):
 						return "Lizard is crushed by Rock!";
 					case ("spock"):
