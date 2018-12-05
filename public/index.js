@@ -116,11 +116,11 @@ $('document').ready(function () {
 			 duration: 350,
 			 step: function (now) {
 				 $("#" + id).css({
-					 transform: "rotateZ(" + now + "deg)",
-					 -webkit-transform: "rotateZ(" + now + "deg)",
-					 -ms-transform: "rotateZ(" + now + "deg)",
-					 -moz-transform: "rotateZ(" + now + "deg)",
-					 -o-transform: "rotateZ(" + now + "deg)"
+					 "-webkit-transform": "rotateZ(" + now + "deg)",
+					 "-ms-transform": "rotateZ(" + now + "deg)",
+					 "-moz-transform": "rotateZ(" + now + "deg)",
+					 "-o-transform": "rotateZ(" + now + "deg)",
+					 "transform": "rotateZ(" + now + "deg)"
 				 })
 			 },
 			 complete: completeFunction
