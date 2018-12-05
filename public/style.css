@@ -22,6 +22,7 @@ body {
     height: 150px;
   }
 }
+
 h1 {
   font-size: 35px;
   text-align: center;
@@ -37,12 +38,24 @@ h1 {
 
 .flip-left {
   transform: rotateZ(90deg) rotateY(0deg) rotateX(0deg);
+  -webkit-transform: rotateZ(90deg) rotateY(0deg) rotateX(0deg);
+  -moz-transform: rotateZ(90deg) rotateY(0deg) rotateX(0deg);
+  -ms-transform: rotateZ(90deg) rotateY(0deg) rotateX(0deg);
+  -o-transform: rotateZ(90deg) rotateY(0deg) rotateX(0deg);
 }
 
 .flip-left-alt {
   transform: rotateZ(180deg) rotateY(0deg) rotateX(180deg);
+  -webkit-transform: rotateZ(180deg) rotateY(0deg) rotateX(180deg);
+  -moz-transform: rotateZ(180deg) rotateY(0deg) rotateX(180deg);
+  -ms-transform: rotateZ(180deg) rotateY(0deg) rotateX(180deg);
+  -o-transform: rotateZ(180deg) rotateY(0deg) rotateX(180deg);
 }
 
 .flip-right {
   transform: rotateZ(90deg) rotateY(0deg) rotateX(180deg);
+  -webkit-transform: rotateZ(90deg) rotateY(0deg) rotateX(180deg);
+  -moz-transform: rotateZ(90deg) rotateY(0deg) rotateX(180deg);
+  -ms-transform: rotateZ(90deg) rotateY(0deg) rotateX(180deg);
+  -o-transform: rotateZ(90deg) rotateY(0deg) rotateX(180deg);
 }
