@@ -26,5 +26,10 @@
   "bugs": {
     "url": "https://github.com/mikeshort10/rock-paper-scissors-lizard-spock/issues"
   },
-  "homepage": "https://github.com/mikeshort10/rock-paper-scissors-lizard-spock#readme"
+  "homepage": "https://github.com/mikeshort10/rock-paper-scissors-lizard-spock#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "pug": "^2.0.3"
+  }
 }
