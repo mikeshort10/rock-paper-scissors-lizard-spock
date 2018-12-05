@@ -23,79 +23,77 @@ $('document').ready(function () {
 		const r = "Right Hand";
 		if (leftHand === rightHand) return "Tie!";
 		switch (leftHand) {
-			case ("rock"):
+			case (0):
 				switch (rightHand) {
-					case ("paper"):
+					case (1):
 						return "Rock is covered by Paper!";
-					case ("scissors"):
+					case (2):
 						return "Rock crushes Scissors!";
-					case ("lizard"):
+					case (3):
 						return "Rock crushes Lizard!";
-					case ("spock"):
+					case (4):
 						return "Rock is vaporized by Spock!";
 				}
-				break;
-			case ("paper"):
+			case (1):
 				switch (rightHand) {
-					case ("rock"):
+					case (0):
 						return "Paper covers Rock!";
-					case ("scissors"):
+					case (2):
 						return "Paper is cut by Scissors!";
-					case ("lizard"):
+					case (3):
 						return "Paper is eaten by Lizard!";
-					case ("spock"):
+					case (4):
 						return "Paper disproves Spock!";
 				}
-				break;
-			case ("lizard"):
+			case (2):
 				switch (rightHand) {
-					case ("paper"):
-						return "Lizard eats Paper!";
-					case ("scissors"):
-						return "Lizard is decapitated by Scissors!";
-					case ("rock"):
-						return "Lizard is crushed by Rock!";
-					case ("spock"):
-						return "Lizard poisons Spock!";
-				}
-				break;
-			case ("scissors"):
-				switch (rightHand) {
-					case ("paper"):
-						return "Scissors cuts Paper!";
-					case ("lizard"):
-						return "Scissors decapitates Lizard!";
-					case ("rock"):
+					case (0):
 						return "Scissors are crushed by Rock!";
-					case ("spock"):
+					case (1):
+						return "Scissors cuts Paper!";
+					case (3):
+						return "Scissors decapitates Lizard!";
+					case (4):
 						return "Scissors are smashed by Spock!";
 				}
-				break;
-			case ("spock"):
+			case (3):
 				switch (rightHand) {
-					case ("paper"):
-						return "Spock is disproven by Paper!";
-					case ("scissors"):
-						return "Spock smashes Scissors!";
-					case ("lizard"):
-						return "Spock is poisoned by Lizard!";
-					case ("rock"):
-						return "Spock vaporizes Rock!";
+					case (0):
+						return "Lizard is crushed by Rock!";
+					case (1):
+						return "Lizard eats Paper!";
+					case (2):
+						return "Lizard is decapitated by Scissors!";
+					case (4):
+						return "Lizard poisons Spock!";
 				}
-				break;
+			case (4):
+				switch (rightHand) {
+					case (0):
+						return "Spock vaporizes Rock!";
+					case (1):
+						return "Spock is disproven by Paper!";
+					case (2):
+						return "Spock smashes Scissors!";
+					case (3):
+						return "Spock is poisoned by Lizard!";
+				}
 		}
 	}
 	
 	 function rps (id, start, middle, count = 0) {
-		 leftHand = undefined;
-		 rightHand = undefined;
 		 let completeFunction = () => rps(id, middle, start, count+1);
 		 if (count > 4) completeFunction = function () {
-			 let rando = Math.floor(Math.random() * 5);
-			 let choice = id === "left" ? choicesLeft[rando] : choicesRight[rando];
-			 id === "left" ? leftHand = choice.split(" ")[1].split("-")[2] : rightHand = choice.split(" ")[1].split("-")[2];
+			 let rando = Math.floor(Math.random() * 5); 
+			 if (id === "right") {
+				 rightHand = rando;
+			} else if (leftHand === undefined) {
+				 leftHand = rando;
+			}
+			let choice = (id === "left") ? choicesLeft[leftHand] : choicesRight[rightHand];
+			console.log(id, leftHand, rightHand, choice);
 			 document.getElementById("icon-" + id).className = choice;
-			 if (rightHand && leftHand) {
+			 if (rightHand!==undefined && leftHand!==undefined) {
 				 var winner = win();
 				 document.getElementById("result").innerHTML = winner;
 				 var toBe = winner.split(" ")[1];
@@ -109,6 +107,8 @@ $('document').ready(function () {
 					 $("#icon-left").css("color", "lightgreen");
 					 $("#icon-right").css("color", "pink");
 				 }
+				 leftHand = undefined;
+				 rightHand = undefined;
 				 playing = false;
 			 }
 		 };
@@ -126,12 +126,24 @@ $('document').ready(function () {
 			 complete: completeFunction
 		 })
 	 }
-	
-	$("body").click(function () {
+
+	 function shoot () {
 		if (!playing) {
 		playing = true;
 		rps("left", 0, -45)
 		rps("right", 0, 45)
 		}
-	});
+	}
+
+	function choseWeapon (num) {
+		leftHand = num;
+		shoot();
+	}
+	
+	let buttons = document.getElementsByClassName("hand")
+	for (let i = 0; i < buttons.length; i++) {
+		console.log(buttons[i].id)
+		$(buttons[i]).click(() => choseWeapon(i))
+	}
+	$(".row").click(shoot);
 })

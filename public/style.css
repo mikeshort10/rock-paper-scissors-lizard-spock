@@ -1,4 +1,5 @@
 body {
+  text-align: center;
   height: 100vh;
   width: 100vw;
   background: #8040bf;
@@ -6,7 +7,8 @@ body {
   font-size: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   min-width: 500px;
   min-height: 350px;
   margin: auto;
@@ -19,21 +21,54 @@ body {
 
   #result {
     font-size: 50px;
-    height: 150px;
   }
 }
 
-h1 {
-  font-size: 35px;
-  text-align: center;
-  height: 110px;
+#text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#result {
+  width: 300px;
+  margin: 20px;
+}
+
+.display-box {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-around;
+  min-height: 50px;
+  width: 250px;
+  padding: 10px;
+  border: #8040bf double 5px;
+  border-radius: 5px;
+  background: white;
+  color: #8040bf;
+  z-index: 1;
+  font-size: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+button.hand {
+  background: #8040bf;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+i {
+  color: white;
 }
 
 .row {
   display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  min-width: 700px;
+  justify-content: space-between;
 }
 
 .flip-left {
