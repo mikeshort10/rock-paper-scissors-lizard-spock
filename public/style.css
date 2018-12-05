@@ -1,10 +1,8 @@
 body {
   text-align: center;
-  height: 100vh;
-  width: 100vw;
   background: #8040bf;
   color: white;
-  font-size: 100px;
+  font-size: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -14,15 +12,6 @@ body {
   margin: auto;
 }
 
-@media (min-width: 480px) {
-  body {
-    font-size: 200px;
-  }
-
-  #result {
-    font-size: 50px;
-  }
-}
 
 #text {
   display: flex;
@@ -33,33 +22,36 @@ body {
 #result {
   width: 300px;
   margin: 20px;
+  font-size: 100px;
 }
 
 .display-box {
   display: flex;
   flex-direction: column; 
   justify-content: space-around;
-  min-height: 50px;
-  width: 250px;
+  height: 250px;
+  width: 350px;
   padding: 10px;
   border: #8040bf double 5px;
   border-radius: 5px;
   background: white;
   color: #8040bf;
   z-index: 1;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .button-row {
   display: flex;
   justify-content: space-around;
+  height: 60px;
 }
 
 button.hand {
   background: #8040bf;
   border-radius: 5px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 40px;
+  height: 60px;
 }
 
 i {
